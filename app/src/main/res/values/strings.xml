@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">slackcheckin</string>
+    <string name="service_name">trackingservice</string>
+    <string name="position_activator">Find Location</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
