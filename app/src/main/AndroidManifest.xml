@@ -23,6 +23,9 @@
             android:name=".TrackingService"
             android:label="@string/service_name">
         </service>
+        <receiver
+            android:name=".NotificationReceiver" >
+        </receiver>
     </application>
 
 </manifest>

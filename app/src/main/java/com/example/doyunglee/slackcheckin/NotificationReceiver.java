@@ -17,7 +17,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
+        Log.i(LOG_TAG, "NOTIFICATION RECEIVED!");
         //Send string to Slack
         String userInput = "I'm Here!";
         SlackMessage slackMessage = new SlackMessage(userInput);

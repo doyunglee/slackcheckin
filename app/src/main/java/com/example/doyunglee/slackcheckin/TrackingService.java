@@ -100,21 +100,23 @@ public class TrackingService extends Service implements GoogleApiClient.Connecti
         xDistMeters = 111080.386284 * xDistRaw;
         yDistMeters = 82372.898177 * yDistRaw;
 
-        distFinal = Math.sqrt(Math.pow(xDistMeters,2) + Math.pow(yDistMeters,2));
+        distFinal = Math.sqrt(Math.pow(xDistMeters, 2) + Math.pow(yDistMeters, 2));
         Log.i(LOG_TAG, "distFinal " + distFinal);
 
         if (distFinal < 50.0) {
             //Call Notification.
             Log.i(LOG_TAG, "SEND NOTIFICATION!");
+            PendingIntent contentIntent =
+                    PendingIntent.getBroadcast(this, 0, new Intent(this, NotificationReceiver.class), 0);
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(this)
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setContentTitle("You're at Intrepid!")
+                            .setContentIntent(contentIntent)
                             .setContentText("Click here to post to Slack");
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(0, mBuilder.build());
-
 
         }
     }
