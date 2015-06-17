@@ -22,6 +22,10 @@ import com.google.android.gms.maps.model.LatLng;
 import java.text.DateFormat;
 import java.util.Date;
 
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 /**
  * Created by doyunglee on 6/16/15.
  */
@@ -105,12 +109,12 @@ public class TrackingService extends Service implements GoogleApiClient.Connecti
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(this)
                             .setSmallIcon(R.mipmap.ic_launcher)
-                            .setContentTitle("My notification")
-                            .setContentText("Hello World!");
+                            .setContentTitle("You're at Intrepid!")
+                            .setContentText("Click here to post to Slack");
             NotificationManager mNotificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            // mId allows you to update the notification later on.
             mNotificationManager.notify(0, mBuilder.build());
+
 
         }
     }
