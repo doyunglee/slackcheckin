@@ -21,7 +21,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         //Send string to Slack
         String userInput = "I'm Here!";
         SlackMessage slackMessage = new SlackMessage(userInput);
-        ServiceManager.getSlackServiceInstance().postSlackMessage(slackMessage, new Callback<Void>() {
+        ServiceManager.getSlackServiceInstance().postSlackMessage(BuildConfig.SLACK_CHANNEL_URL_KEY, slackMessage, new Callback<Void>() {
             @Override
             public void success(Void aVoid, Response response) {
                 Log.i(LOG_TAG, "Sending to Slack Success!");
