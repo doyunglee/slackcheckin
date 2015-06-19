@@ -5,4 +5,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="notification_title">You\'re at Intrepid!</string>
+    <string name="notification_text">Click here to post to Slack</string>
 </resources>

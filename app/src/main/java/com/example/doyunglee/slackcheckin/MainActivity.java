@@ -12,7 +12,6 @@ import android.widget.Button;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
-
 public class MainActivity extends ActionBarActivity {
 
     static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -29,8 +28,6 @@ public class MainActivity extends ActionBarActivity {
                 Log.i(LOG_TAG, "button clicked.");
                 // use this to start and trigger a service
                 Intent i= new Intent(getApplicationContext(), TrackingService.class);
-                // potentially add data to the intent
-                i.putExtra("KEY1", "Value to be used by the service");
                 getApplicationContext().startService(i);
             }
         });

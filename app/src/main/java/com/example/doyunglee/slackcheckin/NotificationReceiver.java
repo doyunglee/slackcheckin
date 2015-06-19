@@ -9,19 +9,18 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-/**
- * Created by doyunglee on 6/17/15.
- */
 public class NotificationReceiver extends BroadcastReceiver {
     static final String LOG_TAG = NotificationReceiver.class.getSimpleName();
+    static final String SLACK_MSG = "I'm Here!";
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(LOG_TAG, "NOTIFICATION RECEIVED!");
         //Send string to Slack
-        String userInput = "I'm Here!";
+        String userInput = SLACK_MSG;
         SlackMessage slackMessage = new SlackMessage(userInput);
-        ServiceManager.getSlackServiceInstance().postSlackMessage(BuildConfig.SLACK_CHANNEL_URL_KEY, slackMessage, new Callback<Object>() {
+        ServiceManager.getSlackServiceInstance().postSlackMessage(BuildConfig.SLACK_CHANNEL_URL_KEY,
+                slackMessage, new Callback<Object>() {
             @Override
             public void success(Object object, Response response) {
                 Log.i(LOG_TAG, "Sending to Slack Success!");

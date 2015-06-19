@@ -6,9 +6,6 @@ import com.google.gson.GsonBuilder;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
-/**
- * Created by doyunglee on 6/17/15.
- */
 public class ServiceManager {
 
     public final static String SLACK_ENDPOINT = "https://hooks.slack.com";
