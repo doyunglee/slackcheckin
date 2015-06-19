@@ -21,18 +21,18 @@ public class NotificationReceiver extends BroadcastReceiver {
         SlackMessage slackMessage = new SlackMessage(userInput);
         ServiceManager.getSlackServiceInstance().postSlackMessage(BuildConfig.SLACK_CHANNEL_URL_KEY,
                 slackMessage, new Callback<Object>() {
-            @Override
-            public void success(Object object, Response response) {
-                Log.i(LOG_TAG, "Sending to Slack Success!");
-            }
+                    @Override
+                    public void success(Object object, Response response) {
+                        Log.i(LOG_TAG, "Sending to Slack Success!");
+                    }
 
-            @Override
-            public void failure(RetrofitError error) {
-                error.getCause();
-                Log.i(LOG_TAG, "Sending to Slack Fail!");
-                Log.i(LOG_TAG, error.getCause().toString());
-            }
-        });
+                    @Override
+                    public void failure(RetrofitError error) {
+                        error.getCause();
+                        Log.i(LOG_TAG, "Sending to Slack Fail!");
+                        Log.i(LOG_TAG, error.getCause().toString());
+                    }
+                });
 
     }
 }

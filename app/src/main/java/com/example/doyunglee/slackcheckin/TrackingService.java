@@ -43,7 +43,6 @@ public class TrackingService extends Service implements GoogleApiClient.Connecti
     static final double BOSTON_LONG = -71.038887;
 
 
-
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
 

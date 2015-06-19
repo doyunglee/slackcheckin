@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 Log.i(LOG_TAG, "button clicked.");
                 // use this to start and trigger a service
-                Intent i= new Intent(getApplicationContext(), TrackingService.class);
+                Intent i = new Intent(getApplicationContext(), TrackingService.class);
                 getApplicationContext().startService(i);
             }
         });
